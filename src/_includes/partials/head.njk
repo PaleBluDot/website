@@ -1,0 +1,11 @@
+{% set currentUrl = config.url + page.url %}
+{% set shareImg = config.url + featuredImg %}
+
+{% include "partials/meta.njk" %}
+
+<title>PSD: {{ title }}</title>
+<link rel="canonical" href="{{ currentUrl }}" />
+
+{% include "partials/stylesheets.njk" %}
+{% include "partials/scripts.njk" %}
+{% include "partials/analytics.njk" %}

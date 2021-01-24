@@ -1,0 +1,6 @@
+{
+  "tags": ["projects"],
+  "layout": "base",
+  "path": "projects",
+  "permalink": "./{{path}}/{{ title | slug }}/index.html"
+}

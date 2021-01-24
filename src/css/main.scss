@@ -1,0 +1,33 @@
+/*
+**---------------------------------
+***	Project: PSD Quickstart
+***	version: 0.0.5
+***	last modified: 2021.01.18
+***	author: Pavel Sanchez
+***	email: pavel@bluedot.dev
+***	website: http://pavelsanchez.com
+**---------------------------------
+***********************************
+**---------------------------------
+***	 CSS TABLE OF CONTENTS
+***--------------------------------
+***  1 - Helpers
+***  2 - Base
+***  3 - Pages
+**---------------------------------
+*/
+
+// 1. Configuration and helpers
+@import "1. helpers/_helpers-dir";
+
+// 3. Base stuff
+@import "2. base/_base-dir";
+
+// 4. Layout-related sections
+@import "3. layout/_layout-dir";
+
+// 5. Components
+@import "4. components/_component-dir";
+
+// 6. Page-specific styles
+@import "5. pages/_pages-dir";

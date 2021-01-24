@@ -1,6 +1,6 @@
 {
   "name": "pavelsanchez.com",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "My personal portfolio website and blog.",
   "main": "eleventy.js",
   "author": "Pavel Sanchez",
@@ -13,19 +13,28 @@
     "url": "git+https://github.com/PaleBluDot/website.git"
   },
   "scripts": {
-    "start": "cross-env ELEVENTY_ENV=dev concurrently \"npm run clean\"  \"npm run dev\"",
+    "start": "cross-env ELEVENTY_ENV=dev concurrently \"npm run clean\"  \"npm run dev\" \"npm run watch\"",
     "dev": "eleventy --serve",
+    "parcel": "npm run parcel:css && npm run parcel:js",
+    "parcel:css": "parcel build src/css/main.scss --out-dir build/css",
+    "parcel:js": "parcel build src/js/*.js src/js/**/*.js --out-dir build/js",
+    "watch": "parcel watch src/js/**/*.js src/css/main.scss --out-dir build/ --no-source-maps --no-hmr",
     "clean": "rm -r build",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy"
+    "build": "cross-env ELEVENTY_ENV=prod eleventy && npm run parcel"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-navigation": "^0.1.6",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "html-minifier": "^4.0.0",
+    "node-sass": "^5.0.0"
   }
 }
